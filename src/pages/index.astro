@@ -6,6 +6,9 @@ import About from "../components/About.astro";
 import Testimonial from "../components/Testimonial.astro";
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import { Container } from "postcss";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -13,30 +16,35 @@ import Navbar from "../components/Navbar.astro";
 <Layout>
   <Navbar />
   <Hero />
-
+  <h3>Services</h3>
   <div
-    class="container py-6 flex flex-col items-center sm:flex-row sm:items-start w-full justify-around flex-wrap"
+    class="container py-6 flex flex-col items-center lg:flex-row w-full justify-around flex-wrap"
   >
     <Services
       title="Personal Training"
-      description="Training in your own home with me becomes a personalized retreat where each workout becomes a tailored experience just for you and you only.  With a Pilates background, I create low-impact routines that fit perfectly within their comfortable surroundings, turning living rooms into studios. "
+      description="From reformer Pilates to Personal Training in the pleasure of your own home. "
       image="/images/pilates.svg"
       alt="Pexels"
     />
     <Services
-      title="Personal Training"
-      description="Training in your own home with me becomes a personalized retreat where each workout becomes a tailored experience just for you and you only.  With a Pilates background, I create low-impact routines that fit perfectly within their comfortable surroundings, turning living rooms into studios. "
+      title="Wellness Retreat"
+      description=" A sanctuary for your mind, body, and soul."
       image="/images/meditation.svg"
       alt="Pexels"
     />
 
     <Services
       title="Personal Training"
-      description="Training in your own home with me becomes a personalized retreat where each workout becomes a tailored experience just for you and you only.  With a Pilates background, I create low-impact routines that fit perfectly within their comfortable surroundings, turning living rooms into studios. "
+      description="Where beauty meets balance. From radiant facials to flawless nails, your ritual begins here."
       image="/images/skin-care.svg"
       alt="Pexels"
     />
   </div>
+  <div class="services-wrapper px-6">
+    <h3>About Me</h3>
 
-  <About />
+    <About />
+  </div>
+  <Contact />
 </Layout>
+<Footer />

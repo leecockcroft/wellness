@@ -1,93 +1,162 @@
-<nav
-  id="navbar"
-  class="p-4 bg-white dark:text-gray-800 max-w-screen-xl w-full z-100 fixed"
->
-  <div
-    class="container flex justify-between h-16 mx-auto max-w-screen-lg m-auto flex justify-center"
-  >
-    <a
-      rel="noopener noreferrer"
-      href="#"
-      aria-label="Back to homepage"
-      class="flex items-center p-2"
+---
+import "../styles/global.css";
+---
+
+<nav class="bg-white shadow-md fixed z-50 w-full">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16 relative">
+      <!-- Logo -->
+      <a href="/">
+        <img
+          src="/images/1B31CA1D-D0FD-411E-BD34-664F4B784B09.png"
+          alt="test logo"
+          class="h-10 w-auto"
+        />
+      </a>
+      <div class="flex-shrink-0">
+        <!-- Burger Menu Button (Mobile Only) -->
+        <div class="md:hidden">
+          <button
+            id="mobile-menu-button"
+            class="text-gray-700 focus:outline-none"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop Navigation (Centered) -->
+        <div
+          class="hidden md:flex top-4 absolute left-1/2 transform -translate-x-1/2 space-x-8 items-center"
+        >
+          <a href="/" class="text-gray-700 hover:text-blue-600 font-medium"
+            >Home</a
+          >
+          <div class="relative">
+            <button
+              id="services-button"
+              class="text-gray-700 hover:text-blue-600 font-medium focus:outline-none flex items-center gap-1"
+            >
+              Services <span class="text-xs">▾</span>
+            </button>
+            <div
+              id="services-dropdown"
+              class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md hidden z-10"
+            >
+              <a
+                href="/massage"
+                class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50"
+                >Massage</a
+              >
+              <a
+                href="/ritual-spa"
+                class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50"
+                >Ritual Spa</a
+              >
+              <a
+                href="/manicure-and-pedicure"
+                class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50"
+                >Manicure & Pedicure</a
+              >
+              <a
+                href="/brows-and-lashes"
+                class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50"
+                >Brows & Lashes</a
+              >
+              <a
+                href="/waxing"
+                class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50"
+                >Waxing</a
+              >
+              <a
+                href="/permanent-makeup"
+                class="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50"
+                >Permanent Makeup</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="/contact"
+            class="text-gray-700 hover:text-blue-600 font-medium">Contact</a
+          >
+
+          <a href="/blog" class="text-gray-700 hover:text-blue-600 font-medium"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="md:hidden hidden px-4 pt-2 pb-4 space-y-2 w-full"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        viewBox="0 0 32 32"
-        class="w-8 h-8 dark:text-violet-600"
+      <a href="/massage" class="block text-gray-700 hover:text-blue-600"
+        >Massage</a
       >
-        <path
-          d="M27.912 7.289l-10.324-5.961c-0.455-0.268-1.002-0.425-1.588-0.425s-1.133 0.158-1.604 0.433l0.015-0.008-10.324 5.961c-0.955 0.561-1.586 1.582-1.588 2.75v11.922c0.002 1.168 0.635 2.189 1.574 2.742l0.016 0.008 10.322 5.961c0.455 0.267 1.004 0.425 1.59 0.425 0.584 0 1.131-0.158 1.602-0.433l-0.014 0.008 10.322-5.961c0.955-0.561 1.586-1.582 1.588-2.75v-11.922c-0.002-1.168-0.633-2.189-1.573-2.742zM27.383 21.961c0 0.389-0.211 0.73-0.526 0.914l-0.004 0.002-10.324 5.961c-0.152 0.088-0.334 0.142-0.53 0.142s-0.377-0.053-0.535-0.145l0.005 0.002-10.324-5.961c-0.319-0.186-0.529-0.527-0.529-0.916v-11.922c0-0.389 0.211-0.73 0.526-0.914l0.004-0.002 10.324-5.961c0.152-0.090 0.334-0.143 0.53-0.143s0.377 0.053 0.535 0.144l-0.006-0.002 10.324 5.961c0.319 0.185 0.529 0.527 0.529 0.916z"
-        ></path>
-        <path
-          d="M22.094 19.451h-0.758c-0.188 0-0.363 0.049-0.515 0.135l0.006-0.004-4.574 2.512-5.282-3.049v-6.082l5.282-3.051 4.576 2.504c0.146 0.082 0.323 0.131 0.508 0.131h0.758c0.293 0 0.529-0.239 0.529-0.531v-0.716c0-0.2-0.11-0.373-0.271-0.463l-0.004-0.002-5.078-2.777c-0.293-0.164-0.645-0.26-1.015-0.26-0.39 0-0.756 0.106-1.070 0.289l0.010-0.006-5.281 3.049c-0.636 0.375-1.056 1.055-1.059 1.834v6.082c0 0.779 0.422 1.461 1.049 1.828l0.009 0.006 5.281 3.049c0.305 0.178 0.67 0.284 1.061 0.284 0.373 0 0.723-0.098 1.027-0.265l-0.012 0.006 5.080-2.787c0.166-0.091 0.276-0.265 0.276-0.465v-0.716c0-0.293-0.238-0.529-0.529-0.529z"
-        ></path>
-      </svg>
-    </a>
-    <ul class="items-stretch hidden space-x-3 md:flex">
-      <li class="flex">
-        <a
-          rel="noopener noreferrer"
-          href="#"
-          class="flex items-center px-4 -mb-1 border-b-2 dark:border-">Link</a
-        >
-      </li>
-      <li class="flex">
-        <a
-          rel="noopener noreferrer"
-          href="#"
-          class="flex items-center px-4 -mb-1 border-b-2 dark:border-">Link</a
-        >
-      </li>
-      <li class="flex">
-        <a
-          rel="noopener noreferrer"
-          href="#"
-          class="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600"
-          >Link</a
-        >
-      </li>
-      <li class="flex">
-        <a
-          rel="noopener noreferrer"
-          href="#"
-          class="flex items-center px-4 -mb-1 border-b-2 dark:border-">Link</a
-        >
-      </li>
-    </ul>
-    <button class="flex justify-end p-4 md:hidden">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        class="w-6 h-6"
+      <a href="/ritual-spa" class="block text-gray-700 hover:text-blue-600"
+        >Ritual Spa</a
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
+      <a
+        href="/manicure-pedicure"
+        class="block text-gray-700 hover:text-blue-600">Manicure and Pedicure</a
+      >
+      <a href="/waxing" class="block text-gray-700 hover:text-blue-600"
+        >Waxing</a
+      >
+      <a
+        href="/brows-and-lashes"
+        class="block text-gray-700 hover:text-blue-600">Brows and Lashes</a
+      >
+      <a
+        href="/permanent-makeup"
+        class="block text-gray-700 hover:text-blue-600">Permanent Makeup</a
+      >
+
+      <a href="/blog" class="block text-gray-700 hover:text-blue-600">Blog</a>
+
+      <a
+        href="/contact"
+        class="text-center block contact-cta text-white px-4 py-2 rounded-md hover:bg-blue-700"
+        >Contact</a
+      >
+    </div>
+
+    <script>
+      const servicesButton = document.getElementById("services-button");
+      const servicesDropdown = document.getElementById("services-dropdown");
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      servicesButton.addEventListener("click", (e) => {
+        e.stopPropagation();
+        servicesDropdown.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          !servicesDropdown.contains(e.target) &&
+          e.target !== servicesButton
+        ) {
+          servicesDropdown.classList.add("hidden");
+        }
+      });
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
   </div>
-
-  <style>
-    nav {
-      background: #f9d0d0;
-    }
-  </style>
-
-  <script>
-    const navbar = document.getElementById("navbar");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add("opacity-80");
-      } else {
-        navbar.classList.remove("opacity-80");
-      }
-    });
-  </script>
 </nav>

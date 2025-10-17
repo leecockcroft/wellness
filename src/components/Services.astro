@@ -1,21 +1,31 @@
 ---
 const { title, description, image, alt } = Astro.props;
+import "../styles/global.css";
+import { fade } from "astro:transitions";
 ---
 
 <article
-  class="max-w-xs p-6 rounded-md dark:text-gray-900 flex flex-col items-center justify-center"
+  class="mb-10 max-w-xs p-6 rounded-md dark:text-gray-900 flex flex-col items-center justify-center"
 >
   <div class="img-service">
     <img
       src={image}
       alt={alt}
       class="object-contain object-center w-full rounded-md h-72 dark:bg-gray-500"
+      data-aos="fade-up"
     />
   </div>
   <div class="mt-6 mb-2">
     <h2 class="text-xl font-semibold tracking-wide">{title}</h2>
   </div>
-  <p class="dark:text-gray-800">{description}</p>
+  <p class="dark:text-gray-800 text-center">{description}</p>
+  <a
+    href="/personal-training"
+    class="backgroundcta text-white
+     text-gray-800 px-6 py-3 rounded hover:bg-gray-200 transition"
+  >
+    Explore Services
+  </a>
 </article>
 <style>
   .img-service {
@@ -25,6 +35,7 @@ const { title, description, image, alt } = Astro.props;
     border-radius: 50%;
     border: 5px solid #f9d0d0;
     padding: 2rem;
+    text-align: center;
   }
 
   .img-service img {
@@ -35,10 +46,10 @@ const { title, description, image, alt } = Astro.props;
 
   article {
     background: #f9d0d0;
-    height: 20rem;
+    height: 22rem;
     width: 30rem;
     position: relative;
-    margin-top: 20rem;
+    margin-top: 10rem;
     border: 5px solid #a8a8a8;
   }
 </style>
