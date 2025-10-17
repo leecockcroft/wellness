@@ -1,0 +1,44 @@
+---
+const { title, description, image, alt } = Astro.props;
+---
+
+<article
+  class="max-w-xs p-6 rounded-md dark:text-gray-900 flex flex-col items-center justify-center"
+>
+  <div class="img-service">
+    <img
+      src={image}
+      alt={alt}
+      class="object-contain object-center w-full rounded-md h-72 dark:bg-gray-500"
+    />
+  </div>
+  <div class="mt-6 mb-2">
+    <h2 class="text-xl font-semibold tracking-wide">{title}</h2>
+  </div>
+  <p class="dark:text-gray-800">{description}</p>
+</article>
+<style>
+  .img-service {
+    background: #a8a8a8;
+    position: absolute;
+    top: -8rem;
+    border-radius: 50%;
+    border: 5px solid #f9d0d0;
+    padding: 2rem;
+  }
+
+  .img-service img {
+    width: 6rem;
+    height: 6rem;
+    object-fit: contain;
+  }
+
+  article {
+    background: #f9d0d0;
+    height: 20rem;
+    width: 30rem;
+    position: relative;
+    margin-top: 20rem;
+    border: 5px solid #a8a8a8;
+  }
+</style>

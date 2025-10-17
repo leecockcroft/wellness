@@ -1,11 +1,42 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import Services from "../components/Services.astro";
+import About from "../components/About.astro";
+import Testimonial from "../components/Testimonial.astro";
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <Navbar />
+  <Hero />
+
+  <div
+    class="container py-6 flex flex-col items-center sm:flex-row sm:items-start w-full justify-around flex-wrap"
+  >
+    <Services
+      title="Personal Training"
+      description="Training in your own home with me becomes a personalized retreat where each workout becomes a tailored experience just for you and you only.  With a Pilates background, I create low-impact routines that fit perfectly within their comfortable surroundings, turning living rooms into studios. "
+      image="/images/pilates.svg"
+      alt="Pexels"
+    />
+    <Services
+      title="Personal Training"
+      description="Training in your own home with me becomes a personalized retreat where each workout becomes a tailored experience just for you and you only.  With a Pilates background, I create low-impact routines that fit perfectly within their comfortable surroundings, turning living rooms into studios. "
+      image="/images/meditation.svg"
+      alt="Pexels"
+    />
+
+    <Services
+      title="Personal Training"
+      description="Training in your own home with me becomes a personalized retreat where each workout becomes a tailored experience just for you and you only.  With a Pilates background, I create low-impact routines that fit perfectly within their comfortable surroundings, turning living rooms into studios. "
+      image="/images/skin-care.svg"
+      alt="Pexels"
+    />
+  </div>
+
+  <About />
 </Layout>
